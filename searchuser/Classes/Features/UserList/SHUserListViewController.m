@@ -70,6 +70,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   [tableView deselectRowAtIndexPath:indexPath animated:YES];
+  [self.view endEditing:YES];
   [self fetchReposWithIndexPath:indexPath];
 }
 
@@ -96,15 +97,14 @@
 #pragma mark - SearchUser API
 
 - (void)searchUserWithText:(NSString *)searchText {
-  SHOW_HUD
-  NSDictionary *param = @{kSearchUserKey : searchText};
+  NSDictionary *param = @{kSearchUserKey : searchText,
+                          kParamPageSize : @(kPerPage)};
   [self.sessionManager searchUsers:param].then(^(OVCResponse *response) {
     [self buildUserData:response.result];
     [self.tableView reloadData];
   }).catch(^(NSError *error) {
     [SKToastUtil toastWithText:error.localizedDescription];
   }).always(^{
-    HIDE_HUD
   });
 }
 
@@ -116,7 +116,7 @@
   }
   
   SHOW_HUD
-  NSDictionary *param = @{};
+  NSDictionary *param = @{kParamPageSize : @(kPerPage)};
   [self.sessionManager fetchReposWithUser:user.login parameters:param].then(^(OVCResponse *response) {
     user.preferredLanguage = [self statisticsPreferredLanguage:response.result];
     [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];

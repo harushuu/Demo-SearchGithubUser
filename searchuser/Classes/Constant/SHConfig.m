@@ -13,7 +13,7 @@
 NSString * const kBaseURL = @"https://api.github.com/";
 NSString * const kAccept = @"application/vnd.github.mercy-preview+json";
 
-NSUInteger const kPerPage = 30;
+NSUInteger const kPerPage = 100;
 NSString * const kParamPageSize = @"per_page";
 
 NSString * const kSearchPlaceholder = @"请输入关键字搜索";
