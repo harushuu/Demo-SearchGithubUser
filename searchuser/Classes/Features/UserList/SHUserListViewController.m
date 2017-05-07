@@ -13,6 +13,7 @@
 #import <StarterKit/SKToastUtil.h>
 #import <Overcoat/OVCResponse.h>
 #import "SHRepoModel.h"
+#import <libextobjc/EXTScope.h>
 
 @interface SHUserListViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 @property (nonatomic, assign) BOOL didSetupConstraints;
@@ -98,11 +99,14 @@
 
 - (void)searchUserWithText:(NSString *)searchText {
   NSDictionary *param = @{kSearchUserKey : searchText,
-                          kParamPageSize : @(kPerPage)};
+                          kParamPageSize : @(kPerPage),
+                          kParamTokenKey : kTokenKey};
+
   [self.sessionManager searchUsers:param].then(^(OVCResponse *response) {
     [self buildUserData:response.result];
     [self.tableView reloadData];
   }).catch(^(NSError *error) {
+    [self.view endEditing:YES];
     [SKToastUtil toastWithText:error.localizedDescription];
   }).always(^{
   });
@@ -115,15 +119,39 @@
     return;
   }
   
-  SHOW_HUD
-  NSDictionary *param = @{kParamPageSize : @(kPerPage)};
-  [self.sessionManager fetchReposWithUser:user.login parameters:param].then(^(OVCResponse *response) {
-    user.preferredLanguage = [self statisticsPreferredLanguage:response.result];
+  @weakify(self);
+  [self requestReposWithUser:user callBack:^(NSArray *repos, NSError *error) {
+    if (error) {
+      [SKToastUtil toastWithText:error.localizedDescription];
+      return ;
+    }
+    @strongify(self);
+    user.preferredLanguage = [self statisticsPreferredLanguage:repos];
     [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+  }];
+}
+
+- (void)requestReposWithUser:(SHUserItemModel *)user callBack:(void(^)(NSArray *repos, NSError *error))callback {
+  [self requestReposWithUser:user pageIndex:kStartPageIndex cacheRepos:@[].mutableCopy callBack:callback];
+}
+
+- (void)requestReposWithUser:(SHUserItemModel *)user pageIndex:(NSInteger)pageIndex cacheRepos:(NSMutableArray *)cacheRepos callBack:(void(^)(NSArray *repos, NSError *error))callback {
+  SHOW_HUD
+  NSDictionary *param = @{kParamPageSize : @(kPerPage),
+                          kParamPageIndex : @(pageIndex),
+                          kParamTokenKey : kTokenKey};
+  [self.sessionManager fetchReposWithUser:user.login parameters:param].then(^(OVCResponse *response) {
+    [cacheRepos addObjectsFromArray:response.result];
+    if ([(NSArray *)response.result count] < kPerPage) {
+      callback(cacheRepos, nil);
+      HIDE_HUD
+    } else {
+      [self requestReposWithUser:user pageIndex:pageIndex + 1 cacheRepos:cacheRepos callBack:callback];
+    }
   }).catch(^(NSError *error) {
-    [SKToastUtil toastWithText:error.localizedDescription];
-  }).always(^{
+    callback(nil, error);
     HIDE_HUD
+  }).always(^{
   });
 }
 

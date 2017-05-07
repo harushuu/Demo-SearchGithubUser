@@ -15,6 +15,10 @@ extern NSString * const kAccept;
 
 extern NSUInteger const kPerPage;
 extern NSString * const kParamPageSize;
+extern NSString * const kParamPageIndex;
+extern NSUInteger const kStartPageIndex;
+extern NSString * const kTokenKey;
+extern NSString * const kParamTokenKey;
 
 extern NSString * const kSearchPlaceholder;
 
