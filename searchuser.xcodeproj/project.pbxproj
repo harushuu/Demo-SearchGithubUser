@@ -8,9 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		A818E0E91EBC121400DA57EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A818E0E81EBC121400DA57EC /* main.m */; };
-		A818E0EC1EBC121400DA57EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A818E0EB1EBC121400DA57EC /* AppDelegate.m */; };
-		A818E0EF1EBC121400DA57EC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A818E0EE1EBC121400DA57EC /* ViewController.m */; };
 		A818E0F41EBC121400DA57EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A818E0F31EBC121400DA57EC /* Assets.xcassets */; };
+		A818E1071EBC1AE700DA57EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A818E1011EBC1AE700DA57EC /* AppDelegate.m */; };
+		A818E1101EBC1C8F00DA57EC /* SHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A818E10F1EBC1C8F00DA57EC /* SHViewController.m */; };
+		A818E1131EBC1CA900DA57EC /* SHUserListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A818E1121EBC1CA900DA57EC /* SHUserListViewController.m */; };
+		A818E1161EBC1DF100DA57EC /* SHConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = A818E1151EBC1DF100DA57EC /* SHConfig.m */; };
+		A818E1191EBC1EDD00DA57EC /* SKHTTPSessionManager+SHSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A818E1181EBC1EDD00DA57EC /* SKHTTPSessionManager+SHSessionManager.m */; };
+		A818E11C1EBC284100DA57EC /* SHModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A818E11B1EBC284100DA57EC /* SHModel.m */; };
+		A818E11F1EBC285600DA57EC /* SHUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A818E11E1EBC285600DA57EC /* SHUserModel.m */; };
+		A818E1221EBC286B00DA57EC /* SHRepoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A818E1211EBC286B00DA57EC /* SHRepoModel.m */; };
+		A818E1251EBC28AC00DA57EC /* SHUserItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A818E1241EBC28AC00DA57EC /* SHUserItemModel.m */; };
+		A818E1281EBC43CB00DA57EC /* SHLoadingHudManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A818E1271EBC43CB00DA57EC /* SHLoadingHudManager.m */; };
+		A818E12D1EBC51E200DA57EC /* SHTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A818E12C1EBC51E200DA57EC /* SHTableViewCell.m */; };
+		A818E1301EBC51FA00DA57EC /* SHUserListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A818E12F1EBC51FA00DA57EC /* SHUserListTableViewCell.m */; };
+		A818E1331EBC52E200DA57EC /* SHConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = A818E1321EBC52E200DA57EC /* SHConstants.m */; };
 		F0F0A47994402E6B7AFD0889 /* Pods_searchuser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3153226191F55677B8A6FC02 /* Pods_searchuser.framework */; };
 /* End PBXBuildFile section */
 
@@ -20,12 +31,35 @@
 		96F337A84A37AF5024B2FD4F /* Pods-searchuser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-searchuser.release.xcconfig"; path = "Pods/Target Support Files/Pods-searchuser/Pods-searchuser.release.xcconfig"; sourceTree = "<group>"; };
 		A818E0E41EBC121400DA57EC /* searchuser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = searchuser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A818E0E81EBC121400DA57EC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A818E0EA1EBC121400DA57EC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		A818E0EB1EBC121400DA57EC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A818E0ED1EBC121400DA57EC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A818E0EE1EBC121400DA57EC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A818E0F31EBC121400DA57EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A818E0F81EBC121400DA57EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A818E1001EBC1AE700DA57EC /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A818E1011EBC1AE700DA57EC /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A818E1081EBC1B1300DA57EC /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		A818E10E1EBC1C8F00DA57EC /* SHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHViewController.h; sourceTree = "<group>"; };
+		A818E10F1EBC1C8F00DA57EC /* SHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHViewController.m; sourceTree = "<group>"; };
+		A818E1111EBC1CA900DA57EC /* SHUserListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHUserListViewController.h; sourceTree = "<group>"; };
+		A818E1121EBC1CA900DA57EC /* SHUserListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHUserListViewController.m; sourceTree = "<group>"; };
+		A818E1141EBC1DF100DA57EC /* SHConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHConfig.h; sourceTree = "<group>"; };
+		A818E1151EBC1DF100DA57EC /* SHConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHConfig.m; sourceTree = "<group>"; };
+		A818E1171EBC1EDD00DA57EC /* SKHTTPSessionManager+SHSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKHTTPSessionManager+SHSessionManager.h"; sourceTree = "<group>"; };
+		A818E1181EBC1EDD00DA57EC /* SKHTTPSessionManager+SHSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKHTTPSessionManager+SHSessionManager.m"; sourceTree = "<group>"; };
+		A818E11A1EBC284100DA57EC /* SHModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHModel.h; sourceTree = "<group>"; };
+		A818E11B1EBC284100DA57EC /* SHModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHModel.m; sourceTree = "<group>"; };
+		A818E11D1EBC285600DA57EC /* SHUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHUserModel.h; sourceTree = "<group>"; };
+		A818E11E1EBC285600DA57EC /* SHUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHUserModel.m; sourceTree = "<group>"; };
+		A818E1201EBC286B00DA57EC /* SHRepoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHRepoModel.h; sourceTree = "<group>"; };
+		A818E1211EBC286B00DA57EC /* SHRepoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHRepoModel.m; sourceTree = "<group>"; };
+		A818E1231EBC28AC00DA57EC /* SHUserItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHUserItemModel.h; sourceTree = "<group>"; };
+		A818E1241EBC28AC00DA57EC /* SHUserItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHUserItemModel.m; sourceTree = "<group>"; };
+		A818E1261EBC43CB00DA57EC /* SHLoadingHudManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHLoadingHudManager.h; sourceTree = "<group>"; };
+		A818E1271EBC43CB00DA57EC /* SHLoadingHudManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHLoadingHudManager.m; sourceTree = "<group>"; };
+		A818E12B1EBC51E200DA57EC /* SHTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHTableViewCell.h; sourceTree = "<group>"; };
+		A818E12C1EBC51E200DA57EC /* SHTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHTableViewCell.m; sourceTree = "<group>"; };
+		A818E12E1EBC51FA00DA57EC /* SHUserListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHUserListTableViewCell.h; sourceTree = "<group>"; };
+		A818E12F1EBC51FA00DA57EC /* SHUserListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHUserListTableViewCell.m; sourceTree = "<group>"; };
+		A818E1311EBC52E200DA57EC /* SHConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHConstants.h; sourceTree = "<group>"; };
+		A818E1321EBC52E200DA57EC /* SHConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHConstants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,10 +106,7 @@
 		A818E0E61EBC121400DA57EC /* searchuser */ = {
 			isa = PBXGroup;
 			children = (
-				A818E0EA1EBC121400DA57EC /* AppDelegate.h */,
-				A818E0EB1EBC121400DA57EC /* AppDelegate.m */,
-				A818E0ED1EBC121400DA57EC /* ViewController.h */,
-				A818E0EE1EBC121400DA57EC /* ViewController.m */,
+				A818E0FE1EBC1AE700DA57EC /* Classes */,
 				A818E0F31EBC121400DA57EC /* Assets.xcassets */,
 				A818E0F81EBC121400DA57EC /* Info.plist */,
 				A818E0E71EBC121400DA57EC /* Supporting Files */,
@@ -87,8 +118,106 @@
 			isa = PBXGroup;
 			children = (
 				A818E0E81EBC121400DA57EC /* main.m */,
+				A818E1081EBC1B1300DA57EC /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A818E0FE1EBC1AE700DA57EC /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A818E0FF1EBC1AE700DA57EC /* AppDelegate */,
+				A818E1021EBC1AE700DA57EC /* Constant */,
+				A818E1031EBC1AE700DA57EC /* Features */,
+				A818E1041EBC1AE700DA57EC /* Models */,
+				A818E1051EBC1AE700DA57EC /* Network */,
+				A818E1061EBC1AE700DA57EC /* Utils */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		A818E0FF1EBC1AE700DA57EC /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				A818E1001EBC1AE700DA57EC /* AppDelegate.h */,
+				A818E1011EBC1AE700DA57EC /* AppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		A818E1021EBC1AE700DA57EC /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				A818E1141EBC1DF100DA57EC /* SHConfig.h */,
+				A818E1151EBC1DF100DA57EC /* SHConfig.m */,
+				A818E1311EBC52E200DA57EC /* SHConstants.h */,
+				A818E1321EBC52E200DA57EC /* SHConstants.m */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		A818E1031EBC1AE700DA57EC /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				A818E1091EBC1C6800DA57EC /* Base */,
+				A818E10A1EBC1C6800DA57EC /* UserList */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		A818E1041EBC1AE700DA57EC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A818E11D1EBC285600DA57EC /* SHUserModel.h */,
+				A818E11E1EBC285600DA57EC /* SHUserModel.m */,
+				A818E1201EBC286B00DA57EC /* SHRepoModel.h */,
+				A818E1211EBC286B00DA57EC /* SHRepoModel.m */,
+				A818E1231EBC28AC00DA57EC /* SHUserItemModel.h */,
+				A818E1241EBC28AC00DA57EC /* SHUserItemModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A818E1051EBC1AE700DA57EC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A818E1171EBC1EDD00DA57EC /* SKHTTPSessionManager+SHSessionManager.h */,
+				A818E1181EBC1EDD00DA57EC /* SKHTTPSessionManager+SHSessionManager.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A818E1061EBC1AE700DA57EC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A818E1261EBC43CB00DA57EC /* SHLoadingHudManager.h */,
+				A818E1271EBC43CB00DA57EC /* SHLoadingHudManager.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		A818E1091EBC1C6800DA57EC /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A818E10E1EBC1C8F00DA57EC /* SHViewController.h */,
+				A818E10F1EBC1C8F00DA57EC /* SHViewController.m */,
+				A818E11A1EBC284100DA57EC /* SHModel.h */,
+				A818E11B1EBC284100DA57EC /* SHModel.m */,
+				A818E12B1EBC51E200DA57EC /* SHTableViewCell.h */,
+				A818E12C1EBC51E200DA57EC /* SHTableViewCell.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		A818E10A1EBC1C6800DA57EC /* UserList */ = {
+			isa = PBXGroup;
+			children = (
+				A818E1111EBC1CA900DA57EC /* SHUserListViewController.h */,
+				A818E1121EBC1CA900DA57EC /* SHUserListViewController.m */,
+				A818E12E1EBC51FA00DA57EC /* SHUserListTableViewCell.h */,
+				A818E12F1EBC51FA00DA57EC /* SHUserListTableViewCell.m */,
+			);
+			path = UserList;
 			sourceTree = "<group>";
 		};
 		D57757F7E54D0B22D7E8E1D0 /* Frameworks */ = {
@@ -128,6 +257,7 @@
 		A818E0DC1EBC121400DA57EC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = SH;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = shuu;
 				TargetAttributes = {
@@ -219,8 +349,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A818E0EF1EBC121400DA57EC /* ViewController.m in Sources */,
-				A818E0EC1EBC121400DA57EC /* AppDelegate.m in Sources */,
+				A818E1161EBC1DF100DA57EC /* SHConfig.m in Sources */,
+				A818E1071EBC1AE700DA57EC /* AppDelegate.m in Sources */,
+				A818E1191EBC1EDD00DA57EC /* SKHTTPSessionManager+SHSessionManager.m in Sources */,
+				A818E11F1EBC285600DA57EC /* SHUserModel.m in Sources */,
+				A818E1281EBC43CB00DA57EC /* SHLoadingHudManager.m in Sources */,
+				A818E1251EBC28AC00DA57EC /* SHUserItemModel.m in Sources */,
+				A818E1221EBC286B00DA57EC /* SHRepoModel.m in Sources */,
+				A818E1101EBC1C8F00DA57EC /* SHViewController.m in Sources */,
+				A818E1331EBC52E200DA57EC /* SHConstants.m in Sources */,
+				A818E11C1EBC284100DA57EC /* SHModel.m in Sources */,
+				A818E1301EBC51FA00DA57EC /* SHUserListTableViewCell.m in Sources */,
+				A818E1131EBC1CA900DA57EC /* SHUserListViewController.m in Sources */,
+				A818E12D1EBC51E200DA57EC /* SHTableViewCell.m in Sources */,
 				A818E0E91EBC121400DA57EC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,7 +465,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/searchuser/PrefixHeader.pch";
 				INFOPLIST_FILE = searchuser/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shuu.searchuser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -337,7 +480,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/searchuser/PrefixHeader.pch";
 				INFOPLIST_FILE = searchuser/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shuu.searchuser;
 				PRODUCT_NAME = "$(TARGET_NAME)";

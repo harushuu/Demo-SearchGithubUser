@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "SHUserListViewController.h"
+#import <StarterKit/SKNetworkConfig.h>
 
 @interface AppDelegate ()
 
@@ -16,10 +18,22 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    return YES;
+  [self networkConfig];
+  self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+  self.window.backgroundColor = [UIColor whiteColor];
+  [self.window makeKeyAndVisible];
+  SHUserListViewController *userListViewController = [[SHUserListViewController alloc] init];
+  UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:userListViewController];
+  self.window.rootViewController = navigationController;
+  return YES;
 }
 
+- (void)networkConfig {
+  [SKNetworkConfig sharedInstance].baseUrl = kBaseURL;
+  [SKNetworkConfig sharedInstance].accept = kAccept;
+  [SKNetworkConfig sharedInstance].perPage = kPerPage;
+  [SKNetworkConfig sharedInstance].paramPageSize = kParamPageSize;
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
